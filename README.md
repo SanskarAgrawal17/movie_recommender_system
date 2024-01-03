@@ -1,5 +1,4 @@
-#Movie Recommended System
-
+# Movie Recommended System
 
 Our "Movie Recommender System" is an innovative application that harnesses the power of Machine Learning to provide personalized movie recommendations to users. Using the Bag of Words model, our system effectively analyzes textual data, extracting key features to understand user preferences. This model enables us to create a dynamic and responsive recommendation engine, continuously learning and adapting to user behavior.
 
