@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="../static\css\style.css">
+    <style>
+        body {
+            margin: 0;
+            /* Reset default margin */
+            padding: 0;
+            /* Reset default padding */
+            font-size: 25px;
+            background-image: url(../static/images/hero-bg.jpg);
+            background-size: cover;
+            /* Cover the entire container */
+            background-position: center;
+            /* Center the background image */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        sub:hover {
+            background-color: rgb(114, 38, 184);
+        }
+
+        .frm {
+            align-items: center;
+        }
+
+        .sub {
+            color: rgb(255, 255, 255);
+            background-color: rgb(171, 54, 54);
+            font-size: large;
+            height: 40px;
+            width: 150px;
+            border-radius: 20px;
+        }
+
+        .sub:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(171, 130, 130);
+            font-size: large;
+        }
+
+        .gnr {
+            background-color: rgb(155, 90, 90);
+        }
+
+        h1 {
+            color: rgb(253, 64, 64);
+            text-align: center;
+
+        }
+
+        form {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        label {
+            color: #7a3838;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .gnr {
+            background-color: #c26363;
+            color: aliceblue;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .gnr:hover {
+            background-color: #a85a5a;
+            color: aliceblue;
+            padding: 8px;
+            border: none;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .sub {
+            align-items: center;
+        }
+
+        .sub:hover {
+            background-color: #902b2b;
+        }
+
+        #lbl {
+            font-size: 20px;
+        }
+
+        .gnr {
+            height: 40px;
+            border-radius: 20px;
+            font-size: 18px;
+            /* display: none; */
+
+        }
+
+        option {
+            font-size: 18px;
+        }
+
+        h2 {
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <div class="overlay" data-overlay></div>
+
+            <a href="/" class="logo">
+                <img src="../static\images\logo.svg" alt="Filmlane logo">
+            </a>
+
+            <div class="header-actions">
+
+                <button class="btn btn-primary"> <a href="/">Home</a> </button>
+                <button class="btn btn-primary"><a href="/MovieRecommendedModel">Model</a< /button>
+
+            </div>
+
+
+            <button class="menu-open-btn" data-menu-open-btn>
+                <ion-icon name="reorder-two"></ion-icon>
+            </button>
+
+            <nav class="navbar" data-navbar>
+
+                <div class="navbar-top">
+
+                    <a href="./index.html" class="logo">
+                        <img src="./assets/images/logo.svg">
+                    </a>
+
+                    <button class="menu-close-btn" data-menu-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+                </ul>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div  style=" margin-top: 200px">
+        <h1>Movie Recommender System 😎😎</h1>
+
+        <br><br>
+        {% if random == 0 %}
+
+        <form action="/MovieRecommendedModel" method="post">
+
+            <h2>Select any Movie - </h2> <br><br>
+
+            <select id="movieGenre" name="genre" class='gnr'>
+
+                {% for i in result %}
+                <option value="{{ i }}" id="{{ i }}" name="option">{{ i }}</option>
+                {% endfor %}
+
+            </select><br> <br>
+
+
+            <input type="submit" value="Recommend" class="sub"> <br><br>
+
+        </form>
+
+
+        {% elif random == 1 %}
+
+
+        <h2>Result:-</h2>
+
+    </div>
+    <br>
+    <div style="display: flex; margin-left: 40px;">
+        {% for k in hlo %}
+
+        <img src="{{ k }}" alt="" style="height: 400px; width: 250px; margin-left: 30px; padding:15px;">
+
+        {% endfor %}
+
+        <br>
+        {% endif %}
+    </div>
+</body>
+
+</html>
